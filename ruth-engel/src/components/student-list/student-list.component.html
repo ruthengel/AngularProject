@@ -1,17 +1,19 @@
-
 @for(item of arrStudent;track $index){
-   <br> {{item.Id}},<br>
-    {{item.Name}},<br>
-    {{item.Age}}<br>
-    <br>
-    <button (click)="editStudent(item)">Edit</button>
-    @if(item.flag==true){
-        <app-student-details [currentStudent]="item" (saveStudent)="saveInList($event)"></app-student-details>
-    }
+<br> {{item.Id}},<br>
+{{item.Name}},<br>
+{{item.Age}}<br>
+<br>
+<p #p></p>
+<button (click)="editStudent(item)">Edit</button><br>
+<button (click)="DeleteStudent()">delete</button>
+<app-information-popup></app-information-popup>
+
+@if(item.flag==true){
+<app-student-details [currentStudent]="item" (saveStudent)="saveInList($event)"></app-student-details>
+}
 }
 <button (click)="addStudent()">Add student</button>
-@if(choice==-1){   
-    <!-- <app-student-details [currenStudent]="newstud"></app-student-details> -->
-    <app-student-details (saveStudent)="saveInList($event)" ></app-student-details>
+@if(choice==-1){
+<!-- <app-student-details [currenStudent]="newstud"></app-student-details> -->
+<app-student-details (saveStudent)="saveInList($event)"></app-student-details>
 }
-
