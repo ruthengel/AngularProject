@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
-import { student } from '../../student';
+import { student } from '../../models/student';
 import { json } from 'stream/consumers';
 
 @Component({
@@ -13,6 +13,6 @@ export class StudentDetailsComponent {
   @Input() currentStudent!: student ;
   @Output() saveStudent: EventEmitter<any> = new EventEmitter<any>();
   saveStud(id: number, name: string, age: number, active: string) {
-    this.saveStudent.emit(new student(id, name, age,JSON.parse(active)));
+    this.saveStudent.emit(new student(id, name, age,true,JSON.parse(active)));
   }
 }

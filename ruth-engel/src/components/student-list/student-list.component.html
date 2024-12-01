@@ -1,5 +1,6 @@
 <ng-container *ngTemplateOutlet="myTemplate"></ng-container>
 @for(item of arrStudent;track $index){
+    
 <br> {{item.Id}},<br>
 {{item.Name}},<br>
 {{item.Age}}<br>
@@ -12,6 +13,11 @@
 @if(item.flag==true){
 <app-student-details [currentStudent]="item" (saveStudent)="saveInList($event)"></app-student-details>
 }
+<button (click)="open(item)">open</button><br>
+@if(item.IsPayed && item.flagShow){
+<app-course-list ></app-course-list>
+}
+<button (click)="close(item)">close</button>
 }
 <ng-container *ngTemplateOutlet="myTemplate"></ng-container>
 <button (click)="addStudent()">Add student</button>
