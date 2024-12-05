@@ -8,12 +8,10 @@ export class HighlightDirective {
 
   constructor(private color: ElementRef) {
   }
-
-  @Input() highlight1! : string;
-
-  @HostListener('mouseenter') onMouseLeave() {
+  ngOnInit():void{
     this.changeHighlight(this.highlight1);
   }
+  @Input() highlight1! : string;
 
   private changeHighlight(color: string) {
     this.color.nativeElement.style.backgroundColor = color;
