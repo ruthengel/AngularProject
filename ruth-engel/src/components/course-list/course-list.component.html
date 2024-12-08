@@ -1,0 +1,8 @@
+
+Enter your amount of courses:
+<input type="number">
+@for(course of courses;track course.IdCourse ){
+<li appHighlight highlight1="red">{{course.IdCourse}}</li>
+<li appHighlight highlight1="yellow">{{course.NameCourse}}</li>
+<li appHighlight highlight1="violet">{{course.Subject}}</li>
+}

@@ -1,0 +1,12 @@
+
+<div >
+    Id : <input  #id type="number" [value]="currentStudent?.Id">
+    Name :<input  #name type="text" [value]="currentStudent?.Name">
+    Age: <input  #age type="number" [value]="currentStudent?.Age">
+    Active:<input #active type="text" [value]="currentStudent?.Active"><br>
+    @if (!currentStudent.Active){
+        Dateleave: <span>{{currentStudent.d}}</span>
+    }
+    
+</div>
+<button (click)="saveStud(id.valueAsNumber, name.value,age.valueAsNumber, active.value)">save</button>

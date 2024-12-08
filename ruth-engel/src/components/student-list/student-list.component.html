@@ -1,0 +1,27 @@
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+@for(item of arrStudent;track $index){
+    
+<br> {{item.Id}},<br>
+{{item.Name}},<br>
+{{item.Age}}<br>
+<br>
+<p #p> </p>
+<button (click)="editStudent(item)">Edit</button><br>
+<button (click)="DeleteStudent()">delete</button>
+<app-information-popup></app-information-popup>
+
+@if(item.flag==true){
+<app-student-details [currentStudent]="item" (saveStudent)="saveInList($event)"></app-student-details>
+}
+<button (click)="open(item)">open</button><br>
+@if(item.IsPayed && item.flagShow){
+<app-course-list ></app-course-list>
+}
+<button (click)="close(item)">close</button>
+}
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+<button (click)="addStudent()">Add student</button>
+@if(choice==-1){
+<app-student-details (saveStudent)="saveInList($event)"></app-student-details>
+}
+<ng-template #myTemplate><p>----------רשימת התלמידות-----------</p></ng-template>
