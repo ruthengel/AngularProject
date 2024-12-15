@@ -1,4 +1,4 @@
-<form (ngSubmit)="OnSubmit()">
+<form [formGroup]="teacherForm" (ngSubmit)="OnSubmit()">
     @for (teach of teachers; track teach)
     {
     {{teach.Id}}
@@ -10,14 +10,12 @@
     <br>
     }
     <label for="">add/update a techer</label><br>
-    Id:
-    <input type="number" id="id" [(ngModel)]="teacher.Id" name="id" required><br>
-    Name:
-    <input id="name" [(ngModel)]="teacher.Name" name="name" required><br>
-    <!-- <button onclick="classes()">add/update your classes</button> -->
-    <!-- <input type="text" name="" id="num" placeholder="enter your amount of classes"> -->
-    Class:
-    <input id="class" [(ngModel)]="teacher.MyClasses[0]" name="myclass" required>
-    <button type="submit">Submit</button>
+    <label for="Id">Id:</label>
+    <input type="number" id="Id" formControlName="Id" required><br>
+    <label for="Name">Name:</label>
+    <input type="text" id="Name" formControlName="Name" required><br>
+    <label for="Class">Class:</label>
+    <input type="text" id="Class" formControlName="Class"  required>
+    <button type="submit" [disabled]="teacherForm.invalid">Submit</button>
 
 </form>
