@@ -1,0 +1,15 @@
+.content {
+    text-align: center;
+    /*margin-top: 80px;  מיקום מרכזי יותר */
+  }
+  
+  h1 {
+    font-size: 38px;
+    color: #2C3E50; /* צבע טקסט של כותרת */
+  }
+  p{
+    margin-top: 280px;
+    font-size: 30px;
+    color: #2C3E50; 
+    font-weight: bolder;
+  }

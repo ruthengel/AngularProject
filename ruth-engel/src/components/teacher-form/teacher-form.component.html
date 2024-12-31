@@ -1,21 +1,40 @@
-<form [formGroup]="teacherForm" (ngSubmit)="OnSubmit()">
-    @for (teach of teachers; track teach)
-    {
-    {{teach.Id}}
-    {{teach.Name}}<br>
+@for (teach of teachers; track teach)
+{
+<div class="teacher-info">
+    Id: {{teach.Id}}<br />
+    Name: {{teach.Name}}<br />
+    Classes:
     @for (item of teach.MyClasses; track $index)
     {
     {{teach.MyClasses[$index]}}
     }
-    <br>
-    }
-    <label for="">add/update a techer</label><br>
-    <label for="Id">Id:</label>
-    <input type="number" id="Id" formControlName="Id" required><br>
-    <label for="Name">Name:</label>
-    <input type="text" id="Name" formControlName="Name" required><br>
-    <label for="Class">Class:</label>
-    <input type="text" id="Class" formControlName="Class"  required>
-    <button type="submit" [disabled]="teacherForm.invalid">Submit</button>
+</div>
+}
+
+<button (click)="open()">Add/Update teacher</button>
+@if(it){
+
+<form [formGroup]="teacherForm" (ngSubmit)="OnSubmit()">
+    <div class="form-content">
+        <p>Add/Update teacher</p>
+        <div class="form-group">
+            <label for="Id">Id:</label>
+            <input type="number" id="Id" formControlName="Id" required /><br />
+
+            <label for="Name">Name:</label>
+            <input type="text" id="Name" formControlName="Name" required /><br />
+
+            <label for="Class">Class:</label>
+            <input type="text" id="Class" formControlName="Class" required />
+            <div class="bb">
+                <button type="submit" [disabled]="teacherForm.invalid">Submit</button>
+                <button (click)="close()">close form</button>
+            </div>
+
+        </div>
+
+    </div>
+
 
 </form>
+}

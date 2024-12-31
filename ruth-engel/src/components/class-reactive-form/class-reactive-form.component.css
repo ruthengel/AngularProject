@@ -1,0 +1,158 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FFB6C1, #FF6347); /* צבעים עדינים של ורוד ואדום */
+    color: #333;
+  }
+  
+  /* כלל למרכז את התוכן */
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* למרכז את כל התוכן */
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #2C3E50;
+    margin-bottom: 20px;
+  }
+  
+  .class-list {
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center; /* למרכז את רשימת הכיתות */
+  }
+  
+  /* עיצוב כיתות */
+  .class-item {
+    margin: 10px auto;
+    padding: 10px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 500px; /* הפחתתי את הרוחב לרוחב קטן יותר */
+  }
+  
+  /* עיצוב כפתור הוספה */
+  button.add-class {
+    padding: 10px 20px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  
+  button.add-class:hover {
+    background-color: #FF4500;
+  }
+  
+  button.add-class:focus {
+    outline: none;
+  }
+  
+  /* עיצוב הטופס */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px; /* קיבעתי רוחב */
+    margin-top: 20px;
+    margin-left: 500px;
+    text-align: center; /* למרכז את כל התוכן של הטופס */
+  }
+  
+  .form-group {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* כפתורים */
+  button {
+    padding: 8px 16px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #FF4500;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* טקסט שגיאות */
+  p {
+    color: red;
+    font-size: 12px;
+  }
+  
+  /* עיצוב כפתור סגור */
+  button.close-form {
+    padding: 8px 16px;
+    background-color: #808080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  button.close-form:hover {
+    background-color: #505050;
+  }
+  .bb{
+    display: flex;
+    justify-content: space-around;
+  }

@@ -1,0 +1,99 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFB6C1, #FF6347);
+  /* צבעים עדינים של ורוד ואדום */
+  color: #333;
+}
+
+.form-content {
+  margin-left: 500px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  /* קיבעתי רוחב */
+}
+.bb{
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  margin-left: 120px;
+  justify-content: space-between;
+}
+h2 {
+  font-size: 24px;
+  color: #2C3E50;
+  margin-bottom: 20px;
+}
+
+.teacher-info {
+  margin-left: 500px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+  font-size: 14px;
+  text-align: center;
+  width: 500px;
+}
+
+.teacher-info p {
+  margin: 5px 0;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #FF4500;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

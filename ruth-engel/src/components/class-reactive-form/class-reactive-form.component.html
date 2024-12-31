@@ -1,0 +1,81 @@
+<div class="container"></div>
+<div class="class=class-list">@for (item of classes; track item) {
+    <div class="class-item">Class: {{item.level}}.{{item.classNumber}}<br />
+        StudensNum: {{item.studentsNum}}<br />
+        TecharId: {{item.teacherId}}<br /></div>
+
+    }
+    <button class="add-class" (click)="open()">Add class</button>
+</div>
+
+@if(it){
+<form [formGroup]="classForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="level">level:</label>
+        <input type="text" id="level" formControlName="level" required>
+
+
+        @if(class['level'] && class['level'].errors && class['level'].touched)
+        {
+        @if(class['level'].errors['required']){
+        <p>level is required </p>
+        }
+        @if(class['level'].errors['maxlength']){
+        <p>level is one char</p>
+        }
+        @if(class['level'].errors['pattern']){
+        <p>level can be A-G</p>
+        }
+        }
+    </div>
+    <div class="form-group">
+        <label for="classNum">classNum:</label>
+        <input id="classNum" type="number" formControlName="classNum" required>
+
+        @if(class['classNum'] && class['classNum'].errors && class['classNum'].touched)
+        {
+        @if(class['classNum'].errors['required']){
+        <p>classNum is required </p>
+        }
+        @if(class['classNum'].errors['max']){
+        <p>classNum can be 1-7</p>
+        }
+        }
+    </div>
+    <div class="form-group">
+        <label for="studentsNum">studentsNum:</label>
+        <input id="studentsNum" type="number" formControlName="studentsNum" required>
+
+        @if(class['studentsNum'] && class['studentsNum'].errors && class['studentsNum'].touched)
+        {
+        @if(class['studentsNum'].errors['required']){
+        <p>studentsNum is required </p>
+        }
+        @if(class['studentsNum'].errors['max']){
+        <p>studentsNum can be max 50</p>
+        }
+        }
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="teacherId">teacherId:</label>
+        <input id="teacherId" type="number" formControlName="teacherId" required>
+
+        @if(class['teacherId'] && class['teacherId'].errors && class['teacherId'].touched)
+        {
+        @if(class['teacherId'].errors['required']){
+        <p>teacherId is required </p>
+        }
+        }
+
+    </div>
+    <div class="bb">
+        <button type="submit" [disabled]="classForm.invalid">Submit</button>
+        <button (click)="close()">close form</button>
+    </div>
+
+</form>
+}

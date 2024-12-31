@@ -14,6 +14,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 export class TeacherFormComponent implements OnInit {
   teachers: Teacher[] = []
+  it: boolean = false
 
   //teacher: Teacher = new Teacher(1, '', [])
   teacherForm!: FormGroup;
@@ -38,5 +39,12 @@ export class TeacherFormComponent implements OnInit {
       this.teacherservice.updateTeacher(teachnew)
     else
       this.teacherservice.addTeacher(teachnew)
+  }
+  open() {
+    this.it = true
+  }
+
+  close() {
+    this.it = false
   }
 }
