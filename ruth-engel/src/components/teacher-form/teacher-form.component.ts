@@ -16,7 +16,6 @@ export class TeacherFormComponent implements OnInit {
   teachers: Teacher[] = []
   it: boolean = false
 
-  //teacher: Teacher = new Teacher(1, '', [])
   teacherForm!: FormGroup;
   constructor(private teacherservice: TeacherService, private fb: FormBuilder) {
     this.teachers = teacherservice.getTeachers()
@@ -40,6 +39,7 @@ export class TeacherFormComponent implements OnInit {
     else
       this.teacherservice.addTeacher(teachnew)
   }
+
   open() {
     this.it = true
   }

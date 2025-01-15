@@ -7,15 +7,34 @@ import { Subject } from '../../subjectenum';
 export class CourseService {
 
   constructor() { }
-  private courses = [
-    new Course(1,"ggg",Subject.Hitec),
-    new Course(2,"aaa",Subject.Article),
-    new Course(3,"sss",Subject.Teaching)
-   ];
 
-   getCourses() {
-     return this.courses;
-   }
- 
-  
+  private courses = [
+    new Course(1, "Hitec", Subject.Hitec, 5,
+      [{
+        name: "C#",
+        children: [{ name: "Mat" }, { name: "oop" }]
+      },
+      { name: "C++" }
+      ]),
+    new Course(2, "Article", Subject.Article, 1,
+      [
+        {
+          name: "ArticleTrapy",
+          children: [{ name: "Pisyl" }]
+        }
+      ]),
+    new Course(3, "Teaching", Subject.Teaching, 2,
+      [
+        {
+          name: "didactica",
+          children: [{ name: 'teac1' }]
+        }
+      ])
+  ];
+
+  getCourses() {
+    return this.courses;
+  }
+
+
 }

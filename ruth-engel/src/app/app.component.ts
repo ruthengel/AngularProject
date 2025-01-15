@@ -1,19 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { StudentListComponent } from '../components/student-list/student-list.component';
-import { StudentDetailsComponent } from '../components/student-details/student-details.component';
-import { TeacherFormComponent } from '../components/teacher-form/teacher-form.component';
 import { IconPipe } from '../pipes/icon-pipe/icon.pipe';
-import { HomeComponent } from '../components/home/home.component';
-import { ClassReactiveFormComponent } from "../components/class-reactive-form/class-reactive-form.component";
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterOutlet, StudentListComponent,
-    StudentDetailsComponent, TeacherFormComponent, IconPipe, RouterOutlet, RouterLink, RouterLinkActive, ClassReactiveFormComponent],
+  imports: [CommonModule, ReactiveFormsModule, RouterOutlet, HttpClientModule,
+    IconPipe, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

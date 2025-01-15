@@ -1,0 +1,7 @@
+@for(e of (dietService.diets$ | async); track e){
+    {{e | json}}
+}
+@empty{
+    <mat-progress-spinner mode="indeterminate" diameter="40" strokeWidth="4" color="red">
+    </mat-progress-spinner>
+}
